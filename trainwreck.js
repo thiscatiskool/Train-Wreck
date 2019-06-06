@@ -1,12 +1,12 @@
-//Your web app's Firebase configuration
+// Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyBpRYzub5lleOlpINaZZElesVRYK5l80KA",
-    authDomain: "bootcamp-624ae.firebaseapp.com",
-    databaseURL: "https://bootcamp-624ae.firebaseio.com",
-    projectId: "bootcamp-624ae",
-    storageBucket: "bootcamp-624ae.appspot.com",
-    messagingSenderId: "89632336051",
-    appId: "1:89632336051:web:5c87f8dabeba288c"
+    apiKey: "AIzaSyCC5ZS8f79byC6bS7bRienwYsMdyqCfADg",
+    authDomain: "trainwreck-a200f.firebaseapp.com",
+    databaseURL: "https://trainwreck-a200f.firebaseio.com",
+    projectId: "trainwreck-a200f",
+    storageBucket: "trainwreck-a200f.appspot.com",
+    messagingSenderId: "636745272608",
+    appId: "1:636745272608:web:d2298501f2feba91"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -19,8 +19,8 @@ var firebaseConfig = {
     // Grabs user input
     var wreckName = $("#Wreck-name-input").val().trim();
     var wreckRole = $("#Destination-input").val().trim();
-    var wreckStart = moment($("#Time-input").val().trim(), "MM/DD/YYYY").format("X");
-    var wreckRate = $("#Frequency-input").val().trim();
+    var wreckStart = moment($("#Time-input").val().trim(), "hmm").format("HH:mm");
+    var wreckRate = moment($("#Frequency-input").val().trim(), "hmm").format("HH:mm");
   
     // Creates local "temporary" object for holding wreck data
     var newWreck = {
@@ -35,9 +35,9 @@ var firebaseConfig = {
   
     // Logs everything to console
     console.log(newWreck.wreck);
-    console.log(newWreck.destination);
-    console.log(newWreck.time);
-    console.log(newWreck.frequency);
+    //console.log(newWreck.destination);
+    //console.log(newWreck.time);
+    //console.log(newWreck.frequency);
   
     alert("Wreck successfully added");
   
