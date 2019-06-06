@@ -17,17 +17,17 @@ var firebaseConfig = {
     event.preventDefault();
   
     // Grabs user input
-    var wreckName = $("#Wreck-name-input").val().trim();
-    var wreckRole = $("#Destination-input").val().trim();
-    var wreckStart = moment($("#Time-input").val().trim(), "hmm").format("HH:mm");
-    var wreckRate = moment($("#Frequency-input").val().trim(), "hmm").format("HH:mm");
+    var Wreck = $("#Wreck-name-input").val().trim();
+    var Destination = $("#Destination-input").val().trim();
+    var Time = moment($("#Time-input").val().trim(), "hmm").format("HH:mm");
+    var Frequency = moment($("#Frequency-input").val().trim(), "hmm").format("HH:mm");
   
     // Creates local "temporary" object for holding wreck data
     var newWreck = {
-      wreck: empWreck,
-      destination: empDestination,
-      time: empTime,
-      frequency: empFrequency
+      wreck: Wreck,
+      destination: Destination,
+      time: Time,
+      frequency: Frequency
     };
   
     // Uploads wreck data to the database
@@ -35,9 +35,9 @@ var firebaseConfig = {
   
     // Logs everything to console
     console.log(newWreck.wreck);
-    //console.log(newWreck.destination);
-    //console.log(newWreck.time);
-    //console.log(newWreck.frequency);
+    dconsole.log(newWreck.destination);
+    console.log(newWreck.time);
+    console.log(newWreck.frequency);
   
     alert("Wreck successfully added");
   
@@ -53,23 +53,23 @@ var firebaseConfig = {
     console.log(childSnapshot.val());
   
     // Store everything into a variable.
-    var empWreck = childSnapshot.val().wreck;
-    var empDestination = childSnapshot.val().destination;
-    var empTime = childSnapshot.val().time;
-    var empFrequency = childSnapshot.val().frequency;
+    var Wreck = childSnapshot.val().wreck;
+    var Destination = childSnapshot.val().destination;
+    var Time = childSnapshot.val().time;
+    var Frequency = childSnapshot.val().frequency;
   
     // Wreck Info
-    console.log(empWreck);
-    console.log(empDestination);
-    console.log(empTime);
-    console.log(empFrequency);
+    console.log(Wreck);
+    console.log(Destination);
+    console.log(Time);
+    console.log(Frequency);
   
     // Create the new row
     var newRow = $("<tr>").append(
-      $("<td>").text(empWreck),
-      $("<td>").text(empDestination),
-      $("<td>").text(empTime),
-      $("<td>").text(empFrequency),
+      $("<td>").text(Wreck),
+      $("<td>").text(Destination),
+      $("<td>").text(Time),
+      $("<td>").text(Frequency),
     );
   
     // Append the new row to the table
